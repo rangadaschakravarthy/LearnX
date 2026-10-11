@@ -1,0 +1,1 @@
+function User(name) { this.name = name; } User.prototype.sayHi = function() { return `Hi ${this.name}`; }; module.exports = User;

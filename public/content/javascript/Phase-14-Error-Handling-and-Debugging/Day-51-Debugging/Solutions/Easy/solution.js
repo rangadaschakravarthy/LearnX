@@ -1,0 +1,1 @@
+class CustomErr extends Error {} module.exports = CustomErr;

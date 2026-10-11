@@ -1,0 +1,1 @@
+module.exports = (obj, keyToOmit) => { const { [keyToOmit]: _, ...rest } = obj; return rest; };

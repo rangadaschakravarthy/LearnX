@@ -1,0 +1,1 @@
+module.exports = () => { let sum = 0; return val => sum += val; };

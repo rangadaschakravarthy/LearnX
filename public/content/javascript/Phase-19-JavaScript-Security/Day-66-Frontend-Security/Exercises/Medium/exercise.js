@@ -1,0 +1,1 @@
+module.exports = headers => !!headers["access-control-allow-origin"];

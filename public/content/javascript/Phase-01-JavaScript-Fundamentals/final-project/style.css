@@ -1,0 +1,134 @@
+:root {
+  --bg-dark: #0b0f19;
+  --panel-bg: #161f30;
+  --panel-border: #2a364f;
+  --accent-cyan: #38bdf8;
+  --accent-blue: #0284c7;
+  --accent-green: #4ade80;
+  --accent-rose: #f43f5e;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --code-font: 'JetBrains Mono', Consolas, Monaco, monospace;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  color: var(--text-muted);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--text-main);
+}
+
+.tab-btn.active {
+  background-color: var(--accent-blue);
+  color: white;
+  border-color: var(--accent-cyan);
+}
+
+.panel-content {
+  display: none;
+  background-color: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.panel-content.active {
+  display: block;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  color: var(--accent-cyan);
+  font-family: var(--code-font);
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.action-btn {
+  background-color: var(--accent-blue);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s;
+}
+
+.action-btn:hover {
+  background-color: #0369a1;
+}
+
+.output-box {
+  background-color: var(--bg-dark);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  font-family: var(--code-font);
+  color: var(--accent-green);
+  margin-top: 1rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}

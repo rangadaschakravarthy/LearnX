@@ -1,0 +1,1 @@
+module.exports = (fetchFn) => ({ data: null, loading: true });

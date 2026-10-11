@@ -1,0 +1,1 @@
+module.exports = (val, cb) => cb(val * 2);

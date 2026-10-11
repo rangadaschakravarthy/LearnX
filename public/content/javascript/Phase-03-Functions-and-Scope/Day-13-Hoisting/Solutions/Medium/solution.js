@@ -1,0 +1,1 @@
+function declared() { return "Hoisted"; } module.exports = () => declared();

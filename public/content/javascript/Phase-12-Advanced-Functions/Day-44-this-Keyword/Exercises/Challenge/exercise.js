@@ -1,0 +1,1 @@
+module.exports = (fn, ctx) => fn.bind(ctx);

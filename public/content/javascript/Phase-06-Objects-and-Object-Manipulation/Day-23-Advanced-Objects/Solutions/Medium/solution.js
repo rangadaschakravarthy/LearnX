@@ -1,0 +1,1 @@
+module.exports = initial => { let v = initial; return { get val() { return v; }, set val(n) { v = n; } }; };

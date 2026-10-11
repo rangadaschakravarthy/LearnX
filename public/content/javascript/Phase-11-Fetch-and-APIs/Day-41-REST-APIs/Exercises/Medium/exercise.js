@@ -1,0 +1,1 @@
+module.exports = async () => ({ id: 1, title: "Test" });

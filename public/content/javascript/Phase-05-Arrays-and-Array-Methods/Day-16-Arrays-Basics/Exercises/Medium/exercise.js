@@ -1,0 +1,1 @@
+module.exports = arr => { if(arr.length<2) return arr; const res = [...arr]; [res[0], res[res.length-1]] = [res[res.length-1], res[0]]; return res; };

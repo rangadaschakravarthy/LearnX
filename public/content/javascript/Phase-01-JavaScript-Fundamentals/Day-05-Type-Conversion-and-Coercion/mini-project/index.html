@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 05 — Type Conversion Playground</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      margin: 0;
+      padding: 2rem;
+    }
+    .playground-card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 650px;
+      margin: 0 auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    h2 { color: #38bdf8; margin-top: 0; }
+    .form-group {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    input {
+      flex: 1;
+      padding: 0.75rem;
+      background-color: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      color: #38bdf8;
+      font-family: monospace;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #0284c7;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+    button:hover { background-color: #0369a1; }
+    .results {
+      background-color: #090d16;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 1.25rem;
+      font-family: monospace;
+      margin-top: 1rem;
+      color: #4ade80;
+      line-height: 1.8;
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="playground-card">
+    <h2>🧪 Type Conversion & Coercion Playground</h2>
+    
+    <div class="form-group">
+      <input type="text" id="val1" value="&quot;5&quot;">
+      <input type="text" id="val2" value="2">
+    </div>
+
+    <div>
+      <button onclick="runConversionLab()">Run All Tests</button>
+      <button onclick="preset('0', 'false')">0 == false</button>
+      <button onclick="preset('&quot;5&quot;', '2')">&quot;5&quot; &amp; 2</button>
+      <button onclick="preset('[]', '![]')">[] == ![]</button>
+      <button onclick="preset('null', 'undefined')">null == undefined</button>
+    </div>
+
+    <div id="resultsDisplay" class="results">Click "Run All Tests" to view coercion breakdown.</div>
+  </div>
+
+</body>
+</html>

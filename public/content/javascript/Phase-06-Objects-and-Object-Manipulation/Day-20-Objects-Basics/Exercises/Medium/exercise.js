@@ -1,0 +1,1 @@
+module.exports = (obj, k, v) => ({ ...obj, [k]: v });

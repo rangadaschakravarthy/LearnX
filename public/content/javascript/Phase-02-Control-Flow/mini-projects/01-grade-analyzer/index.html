@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade & Eligibility Analyzer</title>
+  <style>
+    body { font-family: sans-serif; background: #0f172a; color: #f8fafc; padding: 20px; }
+    .card { background: #1e293b; padding: 20px; border-radius: 8px; max-width: 500px; }
+    input, button { padding: 8px; margin: 5px 0; display: block; width: 100%; box-sizing: border-box; }
+    button { background: #38bdf8; border: none; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Grade & Eligibility Analyzer</h2>
+    <input type="number" id="scoreInput" placeholder="Enter Score (0-100)" value="85">
+    <input type="number" id="ageInput" placeholder="Enter Age" value="20">
+    <button id="calcBtn">Analyze</button>
+    <div id="out"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

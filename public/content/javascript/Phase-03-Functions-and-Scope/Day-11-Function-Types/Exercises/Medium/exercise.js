@@ -1,0 +1,1 @@
+module.exports = (() => { let secret = 42; return () => secret; })();

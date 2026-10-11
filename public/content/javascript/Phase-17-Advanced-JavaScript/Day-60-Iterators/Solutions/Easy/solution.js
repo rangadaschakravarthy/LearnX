@@ -1,0 +1,1 @@
+module.exports = (s,e)=>({[Symbol.iterator](){let c=s;return{next:()=>c<=e?{value:c++,done:false}:{value:undefined,done:true}};}});

@@ -1,0 +1,1 @@
+module.exports = async fn => { try { return await fn(); } catch (e) { return null; } };

@@ -1,0 +1,1 @@
+module.exports = () => { try { let a = 1; return a; } catch(e) { return null; } };

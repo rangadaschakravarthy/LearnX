@@ -1,0 +1,1 @@
+module.exports = factor => num => num * factor;

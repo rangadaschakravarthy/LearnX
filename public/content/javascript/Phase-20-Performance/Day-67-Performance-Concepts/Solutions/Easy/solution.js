@@ -1,0 +1,1 @@
+module.exports = (fn, delay) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(()=>fn(...a), delay); }; };

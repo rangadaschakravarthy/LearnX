@@ -1,0 +1,4 @@
+[
+    { "id": "1", "title": "Complete Phase 8 DOM Module", "category": "Study", "priority": "High", "completed": false },
+    { "id": "2", "title": "Buy Groceries", "category": "Personal", "priority": "Low", "completed": true }
+]

@@ -1,0 +1,1 @@
+module.exports = initial => { let val = initial; return [() => val, newV => { val = newV; }]; };

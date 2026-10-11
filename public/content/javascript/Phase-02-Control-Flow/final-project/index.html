@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 2 Capstone: JavaScript Logic Challenge Engine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>⚡ Logic Engine</h2>
+    <p style="font-size: 0.85rem; color: var(--text-muted);">Phase 2 Control Flow Challenges</p>
+    <ul class="challenge-list" id="challengeList"></ul>
+  </div>
+
+  <div class="main-content">
+    <div class="header">
+      <div>
+        <h1 id="challengeTitle">Challenge Title</h1>
+        <p id="challengeDesc" style="color: var(--text-muted);">Select a challenge from sidebar</p>
+      </div>
+      <div>
+        <span style="font-size: 0.9rem; color: var(--text-muted);">Mastery Score: </span>
+        <span id="scoreText" style="font-size: 1.2rem; font-weight: bold; color: var(--accent-green);">0 / 10</span>
+      </div>
+    </div>
+
+    <div class="editor-container">
+      <div class="editor-box">
+        <h3>Function Implementation</h3>
+        <textarea id="codeEditor"></textarea>
+        <button id="runBtn">Run Verification Tests</button>
+      </div>
+
+      <div class="output-box">
+        <h3>Test Assertions Output</h3>
+        <div id="testOutput" class="test-results">
+          <p style="color: var(--text-muted);">Click "Run Verification Tests" to execute assertions...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

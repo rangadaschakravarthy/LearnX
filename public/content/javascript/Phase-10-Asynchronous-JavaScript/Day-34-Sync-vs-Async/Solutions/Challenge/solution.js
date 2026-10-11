@@ -1,0 +1,1 @@
+module.exports = tasks => Promise.allSettled(tasks);

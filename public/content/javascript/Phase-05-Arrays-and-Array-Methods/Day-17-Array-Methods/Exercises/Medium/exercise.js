@@ -1,0 +1,1 @@
+module.exports = (arr, idx, n) => { const c = [...arr]; c.splice(idx, n); return c; };

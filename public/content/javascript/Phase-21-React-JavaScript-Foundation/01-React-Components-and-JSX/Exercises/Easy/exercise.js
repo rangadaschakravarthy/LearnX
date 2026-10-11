@@ -1,0 +1,1 @@
+module.exports = (type, props, ...children) => ({ type, props: { ...props, children } });

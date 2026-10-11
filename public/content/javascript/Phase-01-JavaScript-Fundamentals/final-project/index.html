@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Fundamentals Interactive Playground</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="header">
+    <h1>⚡ JavaScript Fundamentals Playground</h1>
+    <p>Phase 01 Final Interactive Synthesis Lab — Days 01 through 05</p>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('scopeTab')">Day 1 &amp; 2: Scope &amp; Variables</button>
+    <button class="tab-btn" onclick="switchTab('typesTab')">Day 3: Data Types &amp; typeof</button>
+    <button class="tab-btn" onclick="switchTab('operatorsTab')">Day 4: Operators &amp; Short-Circuit</button>
+    <button class="tab-btn" onclick="switchTab('coercionTab')">Day 5: Coercion &amp; Equality</button>
+  </div>
+
+  <!-- TAB 1: Scope & Variables -->
+  <div id="scopeTab" class="panel-content active">
+    <h2>🔒 Module 1: Scope &amp; Variable Lifecycle Simulator</h2>
+    <p style="color: var(--text-muted);">Test how var, let, and const behave across block boundaries and hoisting TDZ.</p>
+    
+    <div>
+      <button class="action-btn" onclick="runScopeTest('var')">Test var Block Leakage</button>
+      <button class="action-btn" onclick="runScopeTest('let')">Test let Block Trapping</button>
+      <button class="action-btn" onclick="runScopeTest('const')">Test const Object Mutation</button>
+      <button class="action-btn" onclick="runScopeTest('tdz')">Trigger TDZ Error</button>
+    </div>
+
+    <div id="scopeOutput" class="output-box">Click a button above to run variable &amp; scope execution tests.</div>
+  </div>
+
+  <!-- TAB 2: Data Types & typeof -->
+  <div id="typesTab" class="panel-content">
+    <h2>🔍 Module 2: Data Type &amp; typeof Inspector</h2>
+    <p style="color: var(--text-muted);">Inspect any value to determine its primitive status, typeof quirk, and exact [[Class]] tag.</p>
+
+    <input type="text" id="typeInput" class="form-control" value="[10, 20, 30]">
+
+    <div>
+      <button class="action-btn" onclick="inspectType()">Inspect Input</button>
+      <button class="action-btn" onclick="inspectPreset('null')">null</button>
+      <button class="action-btn" onclick="inspectPreset('NaN')">NaN</button>
+      <button class="action-btn" onclick="inspectPreset('100n')">100n</button>
+      <button class="action-btn" onclick="inspectPreset('Symbol(&quot;id&quot;)')">Symbol</button>
+    </div>
+
+    <div id="typeOutput" class="output-box">Enter an expression above to inspect its metrics.</div>
+  </div>
+
+  <!-- TAB 3: Operators & Short-Circuit -->
+  <div id="operatorsTab" class="panel-content">
+    <h2>🧮 Module 3: Operators &amp; Short-Circuit Evaluator</h2>
+    <p style="color: var(--text-muted);">Evaluate complex expressions, optional chaining, and nullish coalescing fallbacks.</p>
+
+    <input type="text" id="opInput" class="form-control" value="0 ?? &quot;Default Fallback&quot;">
+
+    <div>
+      <button class="action-btn" onclick="evaluateOperator()">Evaluate Expression</button>
+      <button class="action-btn" onclick="opPreset('0 || &quot;Fallback&quot;')">0 || "Fallback"</button>
+      <button class="action-btn" onclick="opPreset('0 ?? &quot;Fallback&quot;')">0 ?? "Fallback"</button>
+      <button class="action-btn" onclick="opPreset('&quot;Cat&quot; &amp;&amp; &quot;Dog&quot;')">"Cat" &amp;&amp; "Dog"</button>
+    </div>
+
+    <div id="opOutput" class="output-box">Evaluation results will render here.</div>
+  </div>
+
+  <!-- TAB 4: Coercion & Equality -->
+  <div id="coercionTab" class="panel-content">
+    <h2>🧪 Module 4: Coercion &amp; Abstract Equality Lab</h2>
+    <p style="color: var(--text-muted);">Compare Loose Equality (==) vs Strict Equality (===) and trace coercion steps.</p>
+
+    <div class="grid-2">
+      <input type="text" id="coercionV1" class="form-control" value="0">
+      <input type="text" id="coercionV2" class="form-control" value="false">
+    </div>
+
+    <div>
+      <button class="action-btn" onclick="compareCoercion()">Compare Values</button>
+      <button class="action-btn" onclick="coercionPreset('&quot;5&quot;', '5')">"5" == 5</button>
+      <button class="action-btn" onclick="coercionPreset('[]', '![]')">[] == ![]</button>
+      <button class="action-btn" onclick="coercionPreset('null', 'undefined')">null == undefined</button>
+    </div>
+
+    <div id="coercionOutput" class="output-box">Click "Compare Values" to view Abstract Equality analysis.</div>
+  </div>
+
+</body>
+</html>

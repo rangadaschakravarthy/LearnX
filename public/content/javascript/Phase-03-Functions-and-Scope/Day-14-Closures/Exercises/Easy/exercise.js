@@ -1,0 +1,1 @@
+module.exports = (init = 0) => { let count = init; return () => ++count; };

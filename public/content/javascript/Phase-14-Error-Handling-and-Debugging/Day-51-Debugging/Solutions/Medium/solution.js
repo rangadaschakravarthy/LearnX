@@ -1,0 +1,1 @@
+module.exports = fn => { try { return [null, fn()]; } catch(e) { return [e, null]; } };

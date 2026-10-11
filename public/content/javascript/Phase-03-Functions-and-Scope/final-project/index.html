@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Function Laboratory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <h1>⚡ JavaScript Function Laboratory</h1>
+      <p>Interactive Web Workbench for Scope, Closures, HOFs, and Recursion</p>
+    </header>
+
+    <nav class="nav-tabs">
+      <button class="tab-btn active" data-tab="scope">Scope Explorer</button>
+      <button class="tab-btn" data-tab="closure">Closure Workbench</button>
+      <button class="tab-btn" data-tab="pipeline">HOF Pipeline Studio</button>
+      <button class="tab-btn" data-tab="recursion">Recursion Visualizer</button>
+    </nav>
+
+    <main class="content-area">
+      <!-- Scope Explorer -->
+      <section id="scope" class="tab-content active">
+        <h2>Lexical Environment Scope Explorer</h2>
+        <div class="panel">
+          <button id="btnTraceScope">Trace Identifier Lookup</button>
+          <div id="scopeOutput" class="console-output">Ready...</div>
+        </div>
+      </section>
+
+      <!-- Closure Workbench -->
+      <section id="closure" class="tab-content">
+        <h2>Closure State Workbench</h2>
+        <div class="panel">
+          <button id="btnIncCounter">Increment Counter Closure</button>
+          <button id="btnGetCounter">Get Counter State</button>
+          <div id="closureOutput" class="console-output">Counter state: 0</div>
+        </div>
+      </section>
+
+      <!-- Pipeline Studio -->
+      <section id="pipeline" class="tab-content">
+        <h2>HOF & Composition Pipeline Studio</h2>
+        <div class="panel">
+          <button id="btnRunPipeline">Run Pipe(double, add10, square)(3)</button>
+          <div id="pipelineOutput" class="console-output">Result will appear here...</div>
+        </div>
+      </section>
+
+      <!-- Recursion Visualizer -->
+      <section id="recursion" class="tab-content">
+        <h2>Recursive Call Stack Visualizer</h2>
+        <div class="panel">
+          <button id="btnRunRecursion">Run Factorial Call Stack (5)</button>
+          <div id="recursionOutput" class="console-output">Stack frames...</div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

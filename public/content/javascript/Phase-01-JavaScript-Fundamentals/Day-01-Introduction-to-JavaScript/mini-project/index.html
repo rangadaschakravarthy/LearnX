@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 01 — JavaScript Console Lab</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      margin: 0;
+      padding: 2rem;
+    }
+    .card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    h1 { color: #38bdf8; margin-top: 0; }
+    p { color: #94a3b8; line-height: 1.6; }
+    button {
+      background-color: #0284c7;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      transition: background 0.2s;
+    }
+    button:hover { background-color: #0369a1; }
+    #outputBox {
+      background-color: #090d16;
+      border: 1px solid #1e293b;
+      border-radius: 6px;
+      padding: 1rem;
+      font-family: monospace;
+      color: #4ade80;
+      margin-top: 1.5rem;
+      min-height: 80px;
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🚀 Day 01: JavaScript Console Lab</h1>
+    <p>Open your Browser DevTools (Press <strong>F12</strong> or <strong>Ctrl+Shift+I</strong> / <strong>Cmd+Option+I</strong>) and switch to the <strong>Console</strong> tab to view detailed lab outputs!</p>
+    
+    <div style="margin-top: 1.5rem;">
+      <button onclick="runConsoleDemo()">Run Console Logs</button>
+      <button onclick="runTableDemo()">Run Console Table</button>
+      <button onclick="runStrictDemo()">Test Strict Mode</button>
+    </div>
+
+    <div id="outputBox">Status: Ready. Click a button above or check your Browser Console.</div>
+  </div>
+
+</body>
+</html>

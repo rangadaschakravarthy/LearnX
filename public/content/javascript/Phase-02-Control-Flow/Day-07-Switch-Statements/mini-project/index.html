@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 07 — Console Menu Application</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      margin: 0;
+      padding: 2rem;
+    }
+    .menu-card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 550px;
+      margin: 0 auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    h2 { color: #38bdf8; margin-top: 0; }
+    .form-group { margin-bottom: 1rem; }
+    label { display: block; margin-bottom: 0.4rem; color: #94a3b8; font-weight: 600; }
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      color: #38bdf8;
+      font-family: monospace;
+      font-size: 1rem;
+      box-sizing: border-box;
+      margin-bottom: 0.75rem;
+    }
+    button {
+      background-color: #0284c7;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover { background-color: #0369a1; }
+    .display {
+      background-color: #090d16;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 1.25rem;
+      font-family: monospace;
+      margin-top: 1.25rem;
+      color: #4ade80;
+      line-height: 1.8;
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="menu-card">
+    <h2>📱 Console Menu Application</h2>
+
+    <div class="form-group">
+      <label>Select Menu Operation:</label>
+      <select id="menuChoice">
+        <option value="1">1. Add (+)</option>
+        <option value="2">2. Subtract (-)</option>
+        <option value="3">3. Multiply (*)</option>
+        <option value="4">4. Divide (/)</option>
+        <option value="5">5. Exit System</option>
+      </select>
+
+      <label>Operand A:</label>
+      <input type="number" id="numA" value="50">
+
+      <label>Operand B:</label>
+      <input type="number" id="numB" value="10">
+    </div>
+
+    <button onclick="executeMenuSelection()">Execute Menu Command</button>
+
+    <div id="menuDisplay" class="display">Click "Execute Menu Command" to trigger switch router.</div>
+  </div>
+
+</body>
+</html>

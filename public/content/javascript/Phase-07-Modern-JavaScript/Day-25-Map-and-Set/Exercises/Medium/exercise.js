@@ -1,0 +1,1 @@
+module.exports = words => { const m = new Map(); words.forEach(w => m.set(w, (m.get(w)||0)+1)); return m; };

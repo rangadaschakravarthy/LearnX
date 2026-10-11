@@ -1,0 +1,1 @@
+function measureDepth(depth=0) { try { return measureDepth(depth+1); } catch(e) { return depth; } } module.exports = measureDepth;

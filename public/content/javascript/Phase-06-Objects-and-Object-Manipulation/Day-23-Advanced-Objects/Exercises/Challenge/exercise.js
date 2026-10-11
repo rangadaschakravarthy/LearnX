@@ -1,0 +1,1 @@
+module.exports = (obj, prop, val) => Object.defineProperty(obj, prop, { value: val, writable: false, enumerable: true });

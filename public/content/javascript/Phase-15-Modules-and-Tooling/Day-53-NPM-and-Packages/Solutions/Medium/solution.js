@@ -1,0 +1,1 @@
+module.exports = pkg => typeof pkg.name === "string" && typeof pkg.version === "string";

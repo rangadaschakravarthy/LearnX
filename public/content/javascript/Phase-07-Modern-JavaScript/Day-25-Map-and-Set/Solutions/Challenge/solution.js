@@ -1,0 +1,1 @@
+const wm = new WeakMap(); module.exports = { set: (k, v) => wm.set(k, v), get: k => wm.get(k) };

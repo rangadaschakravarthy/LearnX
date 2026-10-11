@@ -1,0 +1,3 @@
+# Arrays of Objects Practice Problems
+
+Problems manipulating arrays of student, employee, product, and user objects...

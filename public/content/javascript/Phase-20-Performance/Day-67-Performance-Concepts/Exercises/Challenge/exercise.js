@@ -1,0 +1,1 @@
+module.exports = fn => { const c = new Map(); return (...a) => { const k = JSON.stringify(a); if(c.has(k)) return c.get(k); const r = fn(...a); c.set(k, r); return r; }; };

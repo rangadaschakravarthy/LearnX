@@ -1,0 +1,1 @@
+class Person { constructor(name) { this.name = name; } } class Student extends Person { constructor(name, grade) { super(name); this.grade = grade; } } module.exports = Student;

@@ -1,0 +1,1 @@
+module.exports = (init = 0) => { let initVal = init; return () => ++initVal; };

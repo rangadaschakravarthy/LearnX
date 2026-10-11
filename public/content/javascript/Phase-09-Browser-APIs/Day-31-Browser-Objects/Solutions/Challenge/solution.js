@@ -1,0 +1,1 @@
+module.exports = (sec, cb) => setInterval(cb, 1000);

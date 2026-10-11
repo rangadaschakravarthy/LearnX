@@ -1,0 +1,1 @@
+module.exports = (base, params) => `${base}?${new URLSearchParams(params)}`;

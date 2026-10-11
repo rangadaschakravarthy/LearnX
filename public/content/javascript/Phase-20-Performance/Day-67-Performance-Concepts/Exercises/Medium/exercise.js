@@ -1,0 +1,1 @@
+module.exports = (fn, limit) => { let inT; return (...a) => { if(!inT) { fn(...a); inT = true; setTimeout(()=>inT=false, limit); } }; };

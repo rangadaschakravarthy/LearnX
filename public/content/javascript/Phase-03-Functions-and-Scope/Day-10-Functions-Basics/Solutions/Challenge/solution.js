@@ -1,0 +1,1 @@
+module.exports = (op, a, b) => { const ops = { add: (x,y)=>x+y, sub: (x,y)=>x-y }; return ops[op] ? ops[op](a,b) : 0; };

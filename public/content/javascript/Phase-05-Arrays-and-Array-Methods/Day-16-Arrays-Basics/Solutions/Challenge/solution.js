@@ -1,0 +1,1 @@
+module.exports = (arr, k) => { const n = arr.length; const rot = k % n; return [...arr.slice(n - rot), ...arr.slice(0, n - rot)]; };

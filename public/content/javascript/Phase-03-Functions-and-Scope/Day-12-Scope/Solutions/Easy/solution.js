@@ -1,0 +1,1 @@
+module.exports = () => { const outer = "global"; return () => outer; };

@@ -1,0 +1,1 @@
+const path = require("path"); module.exports = (...parts) => path.join(...parts);

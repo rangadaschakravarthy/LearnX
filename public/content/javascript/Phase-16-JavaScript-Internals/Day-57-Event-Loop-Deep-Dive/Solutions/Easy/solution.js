@@ -1,0 +1,1 @@
+module.exports = obj => (typeof structuredClone === "function" ? structuredClone(obj) : JSON.parse(JSON.stringify(obj)));

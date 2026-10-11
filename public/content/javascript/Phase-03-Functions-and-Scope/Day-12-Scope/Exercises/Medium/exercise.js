@@ -1,0 +1,1 @@
+module.exports = flag => { let res = "default"; if(flag) { let res = "inside"; } return res; };

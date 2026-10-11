@@ -1,0 +1,1 @@
+module.exports = arr => arr.reduce((acc, v) => (acc[v] = (acc[v] || 0) + 1, acc), {});

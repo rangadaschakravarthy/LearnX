@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Processing Pipeline Engine</title>
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --accent: #6366f1;
+      --text: #f8fafc;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      margin: 0;
+      padding: 2rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      backdrop-filter: blur(10px);
+    }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button:hover { opacity: 0.9; }
+    #output {
+      background: #020617;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: monospace;
+      margin-top: 1rem;
+      min-height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Data Processing Pipeline Engine</h1>
+    <p>Visual pipeline builder composing unary functions using `pipe` and `compose` HOFs.</p>
+    <button id="runBtn">Run Demonstration</button>
+    <div id="output">Click "Run Demonstration" to view execution logs...</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

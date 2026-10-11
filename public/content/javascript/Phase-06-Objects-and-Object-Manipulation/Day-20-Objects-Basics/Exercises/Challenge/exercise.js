@@ -1,0 +1,1 @@
+module.exports = (obj, pathStr) => pathStr.split(".").reduce((o, k) => (o || {})[k], obj);
