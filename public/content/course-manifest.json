@@ -4,9 +4,9 @@
   "technology": "JavaScript",
   "description": "An exhaustive, 22-phase curriculum spanning JavaScript fundamentals, async programming, browser APIs, engines, internals, and fullstack frameworks.",
   "sourceRepositoryName": "JavaScript",
-  "sourceRepositoryPath": "../JavaScript",
+  "sourceRepositoryPath": "https://github.com/rangadaschakravarthy/JavaScript",
   "gitRemote": "https://github.com/rangadaschakravarthy/JavaScript",
-  "generatedAt": "2026-10-10T17:26:54.539Z",
+  "generatedAt": "2026-10-11T18:21:54.177Z",
   "stats": {
     "totalPhases": 22,
     "totalDays": 271,

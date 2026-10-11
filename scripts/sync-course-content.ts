@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,10 +29,69 @@ function loadEnv(): Record<string, string> {
 }
 
 const env = loadEnv();
-const configuredRepoPath = process.env.COURSE_REPOSITORY_PATH || env.COURSE_REPOSITORY_PATH || '../JavaScript';
-const repoPath = path.isAbsolute(configuredRepoPath)
-  ? configuredRepoPath
-  : path.resolve(projectRoot, configuredRepoPath);
+const configuredRepoPath = process.env.COURSE_REPOSITORY_PATH || env.COURSE_REPOSITORY_PATH || 'https://github.com/rangadaschakravarthy/JavaScript';
+
+function resolveRepositoryPath(inputPath: string): string {
+  const isUrl = inputPath.startsWith('http://') || inputPath.startsWith('https://') || inputPath.startsWith('git@');
+  const isGitHubShorthand = /^[a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+$/.test(inputPath) && !inputPath.startsWith('.');
+
+  if (isUrl || isGitHubShorthand) {
+    const gitUrl = isUrl
+      ? inputPath
+      : `https://github.com/${inputPath}.git`;
+
+    const repoName = gitUrl.split('/').pop()?.replace('.git', '') || 'JavaScript';
+    
+    // Check if local sibling repo already exists (e.g. ../JavaScript)
+    const localSibling = path.resolve(projectRoot, '..', repoName);
+    if (fs.existsSync(localSibling)) {
+      console.log(`💡 Found existing local sibling repository at: ${localSibling}`);
+      return localSibling;
+    }
+
+    // Otherwise clone/pull into .repos/<repoName>
+    const reposDir = path.resolve(projectRoot, '.repos');
+    const targetDir = path.resolve(reposDir, repoName);
+    
+    if (!fs.existsSync(reposDir)) {
+      fs.mkdirSync(reposDir, { recursive: true });
+    }
+
+    if (!fs.existsSync(targetDir)) {
+      console.log(`📥 Cloning course repository from ${gitUrl}...`);
+      execSync(`git clone --depth 1 "${gitUrl}" "${targetDir}"`, { stdio: 'inherit' });
+    } else {
+      console.log(`🔄 Updating cached repository in ${targetDir}...`);
+      try {
+        execSync(`git -C "${targetDir}" pull`, { stdio: 'inherit' });
+      } catch (err) {
+        console.warn(`⚠️ Warning: Failed to pull latest changes, using cached repository.`);
+      }
+    }
+    return targetDir;
+  }
+
+  // Local path
+  const resolved = path.isAbsolute(inputPath) ? inputPath : path.resolve(projectRoot, inputPath);
+  if (fs.existsSync(resolved)) {
+    return resolved;
+  }
+
+  // Check sibling folder as fallback
+  const siblingDefault = path.resolve(projectRoot, '..', 'JavaScript');
+  if (fs.existsSync(siblingDefault)) {
+    console.log(`💡 Local repository found at sibling directory: ${siblingDefault}`);
+    return siblingDefault;
+  }
+
+  // Fallback to GitHub remote clone
+  console.log(`⚠️ Local path not found at: ${resolved}`);
+  const fallbackUrl = 'https://github.com/rangadaschakravarthy/JavaScript.git';
+  console.log(`🌐 Automatically fetching from GitHub repository: ${fallbackUrl}`);
+  return resolveRepositoryPath(fallbackUrl);
+}
+
+const repoPath = resolveRepositoryPath(configuredRepoPath);
 
 console.log('----------------------------------------------------');
 console.log('🚀 LearnX Course Content Synchronization Pipeline');
